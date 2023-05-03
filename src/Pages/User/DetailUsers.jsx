@@ -17,37 +17,41 @@ function DetailUsers() {
     <>
       {DetailUser && (
         <>
-          <div className="max-w-screen-sm flex justify-center flex-col border border-black mx-auto my-16 rounded bg-gray-900/60">
-            <div className="flex flex-col p-10 text-white">
-              <h3 className="text-xl mt-5 font-bold font-Poppins">
+          <div className="max-w-screen-sm flex justify-center flex-col border border-black mx-auto my-16 rounded bg-gray-900/60 ">
+            <div className="text-white text-center text-3xl font-Poppins mt-4">
+              <h1>Detail Users</h1>
+            </div>
+
+            <div className="flex flex-col px-10 mb-10 text-white">
+              <h3 className="border-b border-white text-xl mt-5 font-bold font-Poppins">
                 Name:{" "}
                 <b className="font-mono font-normal text-green-500">
                   {" "}
                   {DetailUser.name}
                 </b>
               </h3>
-              <h3 className="text-xl mt-5 font-bold font-Poppins">
+              <h3 className="border-b border-white text-xl mt-5 font-bold font-Poppins">
                 Email:
                 <b className="font-mono font-normal text-green-500">
                   {" "}
                   {DetailUser.email}
                 </b>
               </h3>
-              <h3 className="text-xl mt-5 font-bold font-Poppins">
+              <h3 className="border-b border-white text-xl mt-5 font-bold font-Poppins">
                 Phone:
                 <b className="font-mono font-normal text-green-500">
                   {" "}
                   {DetailUser.phone}
                 </b>
               </h3>
-              <h3 className="text-xl mt-5 font-bold font-Poppins">
+              <h3 className="border-b border-white text-xl mt-5 font-bold font-Poppins">
                 City:
                 <b className="font-mono font-normal text-green-500">
                   {" "}
                   {DetailUser.address.city}
                 </b>
               </h3>
-              <h3 className="text-xl mt-5 font-bold font-Poppins">
+              <h3 className="border-b border-white text-xl mt-5 font-bold font-Poppins">
                 Website:
                 <b className="font-mono font-normal text-green-500">
                   {" "}
@@ -59,7 +63,7 @@ function DetailUsers() {
           <div className="text-center">
             <Link
               to={"/"}
-              className="bg-blue-500 text-white py-2 px-7 rounded-lg">
+              className="bg-blue-500 text-white py-3 px-7 rounded-lg font-Poppins">
               Kembali
             </Link>
           </div>

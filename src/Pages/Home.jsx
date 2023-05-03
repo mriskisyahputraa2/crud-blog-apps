@@ -53,7 +53,7 @@ function Home() {
                 <td className="text-lg px-6 py-4">{user.phone}</td>
                 <td className="flex justify-center items-center space-x-4 ">
                   <Link
-                    to={`/detailusers/${user.id}`}
+                    to={`/detail-user/${user.id}`}
                     className="px-6 py-2 bg-gray-900/75 text-white rounded-lg mt-2">
                     Detail
                   </Link>
