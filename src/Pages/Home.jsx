@@ -4,11 +4,19 @@ import { Link } from "react-router-dom";
 function Home() {
   const [users, setUser] = useState([]);
 
-  useEffect(() => {
+  const loadUsers = () => {
     axios.get("http://localhost:3003/users").then((response) => {
       setUser(response.data.reverse());
     });
+  };
+
+  useEffect(() => {
+    loadUsers();
   }, []);
+
+  const DeleteUser = (id) => {
+    axios.delete(`http://localhost:3003/users/${id}`).then(loadUsers());
+  };
 
   return (
     <div className="w-full h-full flex flex-col px-10 py-16">
@@ -60,7 +68,9 @@ function Home() {
                   <button className="px-6 py-2 bg-blue-500 text-white rounded-lg mt-2">
                     Edit
                   </button>
-                  <button className="px-6 py-2 bg-red-500 text-white rounded-lg mt-2">
+                  <button
+                    onClick={() => DeleteUser(user.id)}
+                    className="px-6 py-2 bg-red-500 text-white rounded-lg mt-2">
                     Delete
                   </button>
                 </td>

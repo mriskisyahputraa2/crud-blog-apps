@@ -15,10 +15,10 @@ function AddUser() {
     email: email,
     phone: phone,
   };
-  function handleAddUser(e) {
+  const handleAddUser = (e) => {
     e.preventDefault();
     axios.post("http://localhost:3003/users", data).then(navigate("/"));
-  }
+  };
 
   return (
     <>
