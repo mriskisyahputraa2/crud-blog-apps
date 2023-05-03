@@ -1,23 +1,71 @@
 import axios from "axios";
-import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 
 function DetailUsers() {
-    const { id } = useParams() // ambil id berdasarakan param url 
+  const { id } = useParams(); // ambil id berdasarakan param url
 
-    const [DetailUser, setDetailUser] = useState();
+  const [DetailUser, setDetailUser] = useState();
 
-    useEffect(() => {
-        axios.get(`http://localhost:3003/users/${id}`)
-            .then((response) => {
-                setDetailUser(response.data);
-            })
-    }, [])
+  useEffect(() => {
+    axios.get(`http://localhost:3003/users/${id}`).then((response) => {
+      setDetailUser(response.data);
+    });
+  }, []);
 
-
-    return <>
-        {console.log(DetailUser)}
-        Detail User
+  return (
+    <>
+      {DetailUser && (
+        <>
+          <div className="max-w-screen-sm flex justify-center flex-col border border-black mx-auto my-16 rounded bg-gray-900/60">
+            <div className="flex flex-col p-10 text-white">
+              <h3 className="text-xl mt-5 font-bold font-Poppins">
+                Name:{" "}
+                <b className="font-mono font-normal text-green-500">
+                  {" "}
+                  {DetailUser.name}
+                </b>
+              </h3>
+              <h3 className="text-xl mt-5 font-bold font-Poppins">
+                Email:
+                <b className="font-mono font-normal text-green-500">
+                  {" "}
+                  {DetailUser.email}
+                </b>
+              </h3>
+              <h3 className="text-xl mt-5 font-bold font-Poppins">
+                Phone:
+                <b className="font-mono font-normal text-green-500">
+                  {" "}
+                  {DetailUser.phone}
+                </b>
+              </h3>
+              <h3 className="text-xl mt-5 font-bold font-Poppins">
+                City:
+                <b className="font-mono font-normal text-green-500">
+                  {" "}
+                  {DetailUser.address.city}
+                </b>
+              </h3>
+              <h3 className="text-xl mt-5 font-bold font-Poppins">
+                Website:
+                <b className="font-mono font-normal text-green-500">
+                  {" "}
+                  {DetailUser.website}
+                </b>
+              </h3>
+            </div>
+          </div>
+          <div className="text-center">
+            <Link
+              to={"/"}
+              className="bg-blue-500 text-white py-2 px-7 rounded-lg">
+              Kembali
+            </Link>
+          </div>
+        </>
+      )}
     </>
+  );
 }
-export default DetailUsers
+export default DetailUsers;
