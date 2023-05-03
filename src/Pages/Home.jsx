@@ -6,7 +6,7 @@ function Home() {
 
   useEffect(() => {
     axios.get("http://localhost:3003/users").then((response) => {
-      setUser(response.data);
+      setUser(response.data.reverse());
     });
   }, []);
 

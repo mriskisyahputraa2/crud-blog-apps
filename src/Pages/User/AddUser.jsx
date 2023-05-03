@@ -1,9 +1,24 @@
+import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function AddUser() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+
+  const navigate = useNavigate(); // navigate untuk button ketika di tekan
+
+  // data baru yang di masukkan
+  const data = {
+    name: name,
+    email: email,
+    phone: phone,
+  };
+  function handleAddUser(e) {
+    e.preventDefault();
+    axios.post("http://localhost:3003/users", data).then(navigate("/"));
+  }
 
   return (
     <>
@@ -28,7 +43,7 @@ function AddUser() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="border border-black/80 p-3 w-[600px] mt-5 rounded"
-              type="text"
+              type="email"
               placeholder="Enter your Email..."
             />
 
@@ -36,13 +51,15 @@ function AddUser() {
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               className="border border-black/80 p-3 w-[600px] mt-5 rounded"
-              type="text"
+              type="phone"
               placeholder="Enter your Phone..."
             />
           </form>
 
           <div className="mt-5">
-            <button className="bg-blue-600 text-white w-full p-3 rounded">
+            <button
+              onClick={handleAddUser}
+              className="bg-blue-600 text-white w-full p-3 rounded">
               Add User
             </button>
           </div>
