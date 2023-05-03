@@ -64,7 +64,7 @@ function DetailUsers() {
             <Link
               to={"/"}
               className="bg-blue-500 text-white py-3 px-7 rounded-lg font-Poppins">
-              Kembali
+              Back to Home
             </Link>
           </div>
         </>

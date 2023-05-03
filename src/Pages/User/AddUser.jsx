@@ -37,6 +37,7 @@ function AddUser() {
               className="border border-black/80 p-3 w-[600px] mt-5 rounded"
               type="text"
               placeholder="Enter your Name..."
+              required
             />
 
             <input
@@ -45,14 +46,16 @@ function AddUser() {
               className="border border-black/80 p-3 w-[600px] mt-5 rounded"
               type="email"
               placeholder="Enter your Email..."
+              required
             />
 
             <input
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               className="border border-black/80 p-3 w-[600px] mt-5 rounded"
-              type="phone"
+              type="number"
               placeholder="Enter your Phone..."
+              required
             />
           </form>
 

@@ -65,9 +65,11 @@ function Home() {
                     className="px-6 py-2 bg-gray-900/75 text-white rounded-lg mt-2">
                     Detail
                   </Link>
-                  <button className="px-6 py-2 bg-blue-500 text-white rounded-lg mt-2">
+                  <Link
+                    to={`/edit-user/${user.id}`}
+                    className="px-6 py-2 bg-blue-500 text-white rounded-lg mt-2">
                     Edit
-                  </button>
+                  </Link>
                   <button
                     onClick={() => DeleteUser(user.id)}
                     className="px-6 py-2 bg-red-500 text-white rounded-lg mt-2">
