@@ -44,20 +44,6 @@ function DetailUsers() {
                   {DetailUser.phone}
                 </b>
               </h3>
-              {/* <h3 className="border-b border-white text-xl mt-5 font-bold font-Poppins">
-                City:
-                <b className="font-mono font-normal text-green-500">
-                  {" "}
-                  {DetailUser.address.city}
-                </b>
-              </h3>
-              <h3 className="border-b border-white text-xl mt-5 font-bold font-Poppins">
-                Website:
-                <b className="font-mono font-normal text-green-500">
-                  {" "}
-                  {DetailUser.website}
-                </b>
-              </h3> */}
             </div>
           </div>
           <div className="text-center">
